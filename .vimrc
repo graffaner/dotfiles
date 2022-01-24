@@ -32,11 +32,15 @@ Plug 'ayu-theme/ayu-vim'
 " Gruvbox vim color theme
 Plug 'morhetz/gruvbox'
 
+" An arctic, north-bluish clean and elegant Vim color theme.
+" Designed for a fluent and clear workflow based on the Nord color palette.
+Plug 'arcticicestudio/nord-vim'
+
 " Better manage Vim sessions.
-" Plug 'tpope/vim-obsession'
+Plug 'tpope/vim-obsession'
 
 " Zoom in and out of a specific split pane (similar to tmux).
-" Plug 'dhruvasagar/vim-zoom'
+Plug 'dhruvasagar/vim-zoom'
 
 " Pass focus events from tmux to Vim (useful for autoread and linting tools).
 " Plug 'tmux-plugins/vim-tmux-focus-events'
@@ -49,7 +53,7 @@ Plug 'lambdalisue/fern-mapping-mark-children.vim'
 Plug 'scrooloose/nerdtree'
 
 " Helpers for moving and manipulating files / directories.
-Plug 'tpope/vim-eunuch'
+" Plug 'tpope/vim-eunuch'
 
 " Run a diff on 2 directories.
 " Plug 'will133/vim-dirdiff'
@@ -81,10 +85,17 @@ Plug 'tpope/vim-eunuch'
 " Toggle comments in various ways.
 " Plug 'tpope/vim-commentary'
 Plug 'scrooloose/nerdcommenter'
-let NERDSpaceDelims=1
+" let NERDSpaceDelims=1
 
 " Automatically set 'shiftwidth' + 'expandtab' (indention) based on file type.
 " Plug 'tpope/vim-sleuth'
+
+" Displaying thin vertical lines at each indentation
+" level for code indented with spaces
+Plug 'Yggdroot/indentLine'
+" Disable quote concealing in JSON files
+" otherwise qoutes won't be shown
+let g:vim_json_conceal=0
 
 " A number of useful motions for the quickfix list, pasting and more.
 " Plug 'tpope/vim-unimpaired'
@@ -184,6 +195,14 @@ let g:mkdp_open_ip = '127.0.0.1'
 let g:mkdp_echo_preview_url = 1
 let g:mkdp_port = ''
 
+" Asynchronous Lint Engine, ALE
+Plug 'dense-analysis/ale'
+" declare which linters you want to run in your vimrc file
+let g:ale_linters = {'javascript': ['eslint']}
+" Only run linters named in ale_linters settings.
+let g:ale_linters_explicit = 1
+
+" Other programming language related plugins
 " Plug 'jvirtanen/vim-hcl'
 " Plug 'lifepillar/pgsql.vim'
 Plug 'othree/html5.vim'
@@ -199,6 +218,7 @@ Plug 'vim-ruby/vim-ruby'
 Plug 'wgwoods/vim-systemd-syntax'
 
 " C3.Ai syntax plugins
+" Homebrewed by Lei Chen, Flint Hills Resources
 Plug '~/c3ai_syntax'
 
 call plug#end()
@@ -220,15 +240,9 @@ endif
 syntax on
 
 " Set the color scheme.
-" colorscheme one
-" colorscheme solarized8
-" colorscheme PaperColor
+set background=light
+colorscheme PaperColor
 
-" let ayucolor="dark"   " for dark version of theme
-" colorscheme ayu
-colorscheme gruvbox
-
-" set background=dark
 
 " -----------------------------------------------------------------------------
 " Cursor settings for Vim in WSL terminal
