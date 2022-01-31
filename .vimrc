@@ -206,7 +206,7 @@ let g:ale_linters_explicit = 1
 " Plug 'jvirtanen/vim-hcl'
 " Plug 'lifepillar/pgsql.vim'
 Plug 'othree/html5.vim'
-Plug 'pangloss/vim-javascript'
+Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 Plug 'PotatoesMaster/i3-vim-syntax'
 Plug 'stephpy/vim-yaml'
 Plug 'tmux-plugins/vim-tmux'
@@ -264,7 +264,7 @@ set softtabstop=4	" number of spaces in tab when editing
 set shiftwidth=4	" the size of indent
 set textwidth=0    	" set the text width
 set expandtab   	" tab key inserts space instead of tab
-" set autoindent      	" auto indentation, not always work
+set autoindent      	" auto indentation, not always work
 set fileformat=unix
 set smarttab   		" insert spaces or tabs to go to the next indent
 set number          	" show line numbers
@@ -281,6 +281,10 @@ set ruler                   	" show current line and column
 set encoding=utf-8
 set foldmethod=indent       " Enable folding, creates folds based upon line indents.
 set foldlevel=99
+
+" set file type based indentation
+autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType html       setlocal shiftwidth=2 tabstop=2 softtabstop=2
 
 " -----------------------------------------------------------------------------
 " Plugin settings, mappings and autocommands
