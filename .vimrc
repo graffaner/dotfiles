@@ -190,10 +190,11 @@ Plug 'godlygeek/tabular' | Plug 'tpope/vim-markdown'
 " Markdown Preview for Vim
 " Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install' }
 Plug 'iamcco/markdown-preview.nvim', {'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
-let g:mkdp_open_to_the_world = 1
-let g:mkdp_open_ip = '127.0.0.1'
+let g:mkdp_open_to_the_world = 0
+let g:mkdp_open_ip = ''
 let g:mkdp_echo_preview_url = 1
-let g:mkdp_port = ''
+let g:mkdp_port = '8342'
+let g:mkdp_browser = 'Google Chrome'
 
 " Asynchronous Lint Engine, ALE
 Plug 'dense-analysis/ale'
@@ -272,7 +273,7 @@ set showcmd         	" show command in bottom bar
 set cursorline      	" highlight current line
 set wildmenu        	" visual autocomplete for command menu
 set showmatch       	" highlight matching [{()}]
-" set guifont=Cascadia\ Mono:h10   " default font
+set guifont=Consolas\ for\ Powerline:h16    " default font
 set fenc=utf-8              	" set font encoding
 set backspace=indent,eol,start	" backspace key works as typically
 set incsearch   			" show match as search proceeds
