@@ -201,7 +201,8 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install' }
 let g:mkdp_open_to_the_world = 1
 let g:mkdp_open_ip = '127.0.0.1'
 let g:mkdp_echo_preview_url = 1
-let g:mkdp_port = ''
+let g:mkdp_port = '8342'
+let g:mkdp_browser = 'Google Chrome'
 
 " Asynchronous Lint Engine, ALE
 Plug 'dense-analysis/ale'
