@@ -127,10 +127,16 @@ Plug 'tpope/vim-fugitive'
 " Tagbar
 Plug 'majutsushi/tagbar'
 " map a key to turn on and off Tagbar
-nmap <F8> :TagbarToggle<CR>
+ nmap <F8> :TagbarToggle<CR>
 " point the plugin to the ctag executable
 " if ctag not in search path
 " let g:tagbar_ctags_bin = 'C:\ctags_x86\ctags.exe'
+
+" Vista
+" View and search LSP symbols, tags in Vim/NeoVim.
+Plug 'liuchengxu/vista.vim'
+let g:vista_default_executive = 'ctags'
+"nmap <F8> :Vista!!<CR>
 
 " Bookmarks
 Plug 'mattesgroeger/vim-bookmarks'
@@ -154,6 +160,7 @@ let g:ctrlp_working_path_mode = 'ra'
 Plug 'vim-airline/vim-airline'
 let g:airline#extensions#tabline#enabled=1  " show buffer info in vim-airline
 let g:airline#extensions#tabline#buffer_nr_show=1   " show buffer number
+let g:airline#extensions#tabline#formatter = 'default'  " show path
 set laststatus=2            	" show statusline when vim starts in vim-airline
 
 " Vim-airline-theme
@@ -188,8 +195,9 @@ Plug 'ekalinin/dockerfile.vim'
 Plug 'godlygeek/tabular' | Plug 'tpope/vim-markdown'
 
 " Markdown Preview for Vim
-" Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install' }
-Plug 'iamcco/markdown-preview.nvim', {'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install' }
+" NOTE: the prebuild plugin doesn't contain M1 chip version
+"Plug 'iamcco/markdown-preview.nvim', {'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 let g:mkdp_open_to_the_world = 1
 let g:mkdp_open_ip = '127.0.0.1'
 let g:mkdp_echo_preview_url = 1
@@ -203,10 +211,13 @@ let g:ale_linters = {'javascript': ['eslint']}
 let g:ale_linters_explicit = 1
 
 " Other programming language related plugins
-" Plug 'jvirtanen/vim-hcl'
-" Plug 'lifepillar/pgsql.vim'
+Plug 'jvirtanen/vim-hcl'
+Plug 'lifepillar/pgsql.vim'
 Plug 'othree/html5.vim'
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
+Plug 'leafgarland/typescript-vim'
+Plug 'maxmellon/vim-jsx-pretty'
+"Plug 'jparise/vim-graphql'
 Plug 'PotatoesMaster/i3-vim-syntax'
 Plug 'stephpy/vim-yaml'
 Plug 'tmux-plugins/vim-tmux'
@@ -216,10 +227,11 @@ Plug 'tpope/vim-rails'
 Plug 'vim-python/python-syntax'
 Plug 'vim-ruby/vim-ruby'
 Plug 'wgwoods/vim-systemd-syntax'
+Plug 'hashivim/vim-terraform'
 
 " C3.Ai syntax plugins
 " Homebrewed by Lei Chen, Flint Hills Resources
-Plug '~/c3ai_syntax'
+"Plug '~/c3ai_syntax'
 
 call plug#end()
 
@@ -272,7 +284,8 @@ set showcmd         	" show command in bottom bar
 set cursorline      	" highlight current line
 set wildmenu        	" visual autocomplete for command menu
 set showmatch       	" highlight matching [{()}]
-" set guifont=Cascadia\ Mono:h10   " default font
+"set guifont=Inconsolata:h18   " default font
+set guifont=Inconsolata\ for\ Powerline:h18   " default font
 set fenc=utf-8              	" set font encoding
 set backspace=indent,eol,start	" backspace key works as typically
 set incsearch   			" show match as search proceeds
@@ -285,7 +298,7 @@ set foldlevel=99
 " set file type based indentation
 autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType html       setlocal shiftwidth=2 tabstop=2 softtabstop=2
-autocmd FileType c3typ      setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType typescript setlocal shiftwidth=2 tabstop=2 softtabstop=2
 
 " -----------------------------------------------------------------------------
 " Plugin settings, mappings and autocommands
