@@ -125,9 +125,9 @@ Plug 'tpope/vim-fugitive'
 " Plug 'janko/vim-test'
 
 " Tagbar
-Plug 'majutsushi/tagbar'
+" Plug 'majutsushi/tagbar'
 " map a key to turn on and off Tagbar
- nmap <F8> :TagbarToggle<CR>
+" nmap <F8> :TagbarToggle<CR>
 " point the plugin to the ctag executable
 " if ctag not in search path
 " let g:tagbar_ctags_bin = 'C:\ctags_x86\ctags.exe'
@@ -136,7 +136,15 @@ Plug 'majutsushi/tagbar'
 " View and search LSP symbols, tags in Vim/NeoVim.
 Plug 'liuchengxu/vista.vim'
 let g:vista_default_executive = 'ctags'
-"nmap <F8> :Vista!!<CR>
+nmap <F8> :Vista!!<CR>
+" Ensure you have installed some decent font to show these pretty symbols, then you can enable icon for the kind.
+let g:vista#renderer#enable_icon = 0
+
+" The default icons can't be suitable for all the filetypes, you can extend it as you wish.
+" let g:vista#renderer#icons = {
+" \   "function": "\uf794",
+" \   "variable": "\uf71b",
+" \  }
 
 " Bookmarks
 Plug 'mattesgroeger/vim-bookmarks'
@@ -151,10 +159,10 @@ let g:bookmark_annotation_sign = '##'
 Plug 'mhinz/vim-startify'
 
 " CtrlP: a buffer search utility
-Plug 'ctrlpvim/ctrlp.vim'
+" Plug 'ctrlpvim/ctrlp.vim'
 " When invoked, unless a starting directory is specified,
 " CtrlP will set its local working directory according to this variable
-let g:ctrlp_working_path_mode = 'ra'
+" let g:ctrlp_working_path_mode = 'ra'
 
 " Vim airline
 Plug 'vim-airline/vim-airline'
@@ -162,6 +170,8 @@ let g:airline#extensions#tabline#enabled=1  " show buffer info in vim-airline
 let g:airline#extensions#tabline#buffer_nr_show=1   " show buffer number
 let g:airline#extensions#tabline#formatter = 'default'  " show path
 set laststatus=2            	" show statusline when vim starts in vim-airline
+let g:airline#extensions#obsession#enabled = 1  " enable vim-obsession integration
+let g:airline#extensions#obsession#indicator_text = '$' " set marked indicator
 
 " Vim-airline-theme
 Plug 'vim-airline/vim-airline-themes'
@@ -211,6 +221,16 @@ let g:ale_linters = {'javascript': ['eslint']}
 " Only run linters named in ale_linters settings.
 let g:ale_linters_explicit = 1
 
+" Conquer of Completion
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Use <cr> to confirm completion
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+" GoTo code navigation
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
 " Other programming language related plugins
 Plug 'jvirtanen/vim-hcl'
 Plug 'lifepillar/pgsql.vim'
@@ -229,10 +249,6 @@ Plug 'vim-python/python-syntax'
 Plug 'vim-ruby/vim-ruby'
 Plug 'wgwoods/vim-systemd-syntax'
 Plug 'hashivim/vim-terraform'
-
-" C3.Ai syntax plugins
-" Homebrewed by Lei Chen, Flint Hills Resources
-"Plug '~/c3ai_syntax'
 
 call plug#end()
 
@@ -300,6 +316,7 @@ set foldlevel=99
 autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType html       setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType typescript setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType json syntax match Comment +\/\/.\+$+
 
 " -----------------------------------------------------------------------------
 " Plugin settings, mappings and autocommands
