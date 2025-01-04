@@ -88,7 +88,7 @@ Plug 'scrooloose/nerdcommenter'
 " let NERDSpaceDelims=1
 
 " Automatically set 'shiftwidth' + 'expandtab' (indention) based on file type.
-" Plug 'tpope/vim-sleuth'
+Plug 'tpope/vim-sleuth'
 
 " Displaying thin vertical lines at each indentation
 " level for code indented with spaces
@@ -224,7 +224,7 @@ let g:ale_linters_explicit = 1
 " Conquer of Completion
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Use <cr> to confirm completion
-inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+inoremap <expr> <cr> coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<CR>"
 " GoTo code navigation
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
@@ -249,6 +249,10 @@ Plug 'vim-python/python-syntax'
 Plug 'vim-ruby/vim-ruby'
 Plug 'wgwoods/vim-systemd-syntax'
 Plug 'hashivim/vim-terraform'
+
+" github copilot
+Plug 'github/copilot.vim'
+" let g:copilot_proxy_strict_ssl = v:false
 
 call plug#end()
 
@@ -316,7 +320,7 @@ set foldlevel=99
 autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType html       setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType typescript setlocal shiftwidth=2 tabstop=2 softtabstop=2
-autocmd FileType json syntax match Comment +\/\/.\+$+
+"autocmd FileType json syntax match Comment +\/\/.\+$+
 
 " -----------------------------------------------------------------------------
 " Plugin settings, mappings and autocommands
