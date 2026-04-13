@@ -223,6 +223,7 @@ let g:ale_linters_explicit = 1
 
 " Conquer of Completion
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+let g:coc_node_path = '/Users/lchen5/.local/state/fnm_multishells/25179_1761606572828/bin/node'
 " Use <cr> to confirm completion
 inoremap <expr> <cr> coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<CR>"
 " GoTo code navigation
@@ -305,8 +306,8 @@ set showcmd         	" show command in bottom bar
 set cursorline      	" highlight current line
 set wildmenu        	" visual autocomplete for command menu
 set showmatch       	" highlight matching [{()}]
-"set guifont=Inconsolata:h18   " default font
-set guifont=Inconsolata\ for\ Powerline:h18   " default font
+"set guifont=FiraCode\ Nerd\ Font:h18   " default font
+set guifont=JetBrainsMono\ Nerd\ Font:h20   " default font
 set fenc=utf-8              	" set font encoding
 set backspace=indent,eol,start	" backspace key works as typically
 set incsearch   			" show match as search proceeds
@@ -315,11 +316,12 @@ set ruler                   	" show current line and column
 set encoding=utf-8
 set foldmethod=indent       " Enable folding, creates folds based upon line indents.
 set foldlevel=99
+set foldcolumn=2
 
 " set file type based indentation
-autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 softtabstop=2
-autocmd FileType html       setlocal shiftwidth=2 tabstop=2 softtabstop=2
-autocmd FileType typescript setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 softtabstop=2 foldmethod=syntax
+autocmd FileType html       setlocal shiftwidth=2 tabstop=2 softtabstop=2 foldmethod=syntax
+autocmd FileType typescript setlocal shiftwidth=2 tabstop=2 softtabstop=2 foldmethod=syntax
 "autocmd FileType json syntax match Comment +\/\/.\+$+
 
 " -----------------------------------------------------------------------------
