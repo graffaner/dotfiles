@@ -176,7 +176,7 @@ Plug 'godlygeek/tabular' | Plug 'tpope/vim-markdown'
 
 " Conquer of Completion
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-let g:coc_node_path = '/Users/lchen5/.local/state/fnm_multishells/25179_1761606572828/bin/node'
+let g:coc_node_path = '~/.local/share/fnm/aliases/default/bin/node'
 " Use <cr> to confirm completion
 inoremap <expr> <cr> coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<CR>"
 " GoTo code navigation
