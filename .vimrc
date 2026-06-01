@@ -236,7 +236,7 @@ set showcmd         	" show command in bottom bar
 set cursorline      	" highlight current line
 set wildmenu        	" visual autocomplete for command menu
 set showmatch       	" highlight matching [{()}]
-set guifont=JetBrainsMono-Regular:h19   " default font
+set guifont=JetBrainsMono\ Nerd\ Font:h19   " default font
 set fenc=utf-8              	" set font encoding
 set backspace=indent,eol,start	" backspace key works as typically
 set incsearch   			" show match as search proceeds
