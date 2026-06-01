@@ -85,12 +85,6 @@ let g:vim_json_conceal=0
 " A git wrapper.
 Plug 'tpope/vim-fugitive'
 
-" Dim paragraphs above and below the active paragraph.
-" Plug 'junegunn/limelight.vim'
-
-" Distraction free writing by removing UI elements and centering everything.
-" Plug 'junegunn/goyo.vim'
-
 " Tagbar
 " Plug 'majutsushi/tagbar'
 " map a key to turn on and off Tagbar
@@ -157,23 +151,6 @@ Plug 'ekalinin/dockerfile.vim'
 " Plug 'Glench/Vim-Jinja2-Syntax'
 Plug 'godlygeek/tabular' | Plug 'tpope/vim-markdown'
 
-" Markdown Preview for Vim
-" Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install' }
-" NOTE: the prebuild plugin doesn't contain M1 chip version
-"Plug 'iamcco/markdown-preview.nvim', {'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
-"let g:mkdp_open_to_the_world = 1
-"let g:mkdp_open_ip = '127.0.0.1'
-"let g:mkdp_echo_preview_url = 1
-"let g:mkdp_port = '8342'
-"let g:mkdp_browser = 'Google Chrome'
-
-" Asynchronous Lint Engine, ALE
-"Plug 'dense-analysis/ale'
-" declare which linters you want to run in your vimrc file
-"let g:ale_linters = {'javascript': ['eslint']}
-" Only run linters named in ale_linters settings.
-"let g:ale_linters_explicit = 1
-
 " Conquer of Completion
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 let g:coc_node_path = '~/.local/share/fnm/aliases/default/bin/node'
@@ -184,11 +161,6 @@ nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
-
-" vim-go
-" Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-" govim
-" Plug 'govim/govim'
 
 " Other programming language related plugins
 Plug 'jvirtanen/vim-hcl'
@@ -212,9 +184,6 @@ Plug 'hashivim/vim-terraform'
 " github copilot
 " Plug 'github/copilot.vim'
 " let g:copilot_proxy_strict_ssl = v:false
-
-" Windsurf
-" Plug 'Exafunction/windsurf.vim', { 'branch': 'main' }
 
 call plug#end()
 
