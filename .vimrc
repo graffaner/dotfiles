@@ -132,7 +132,8 @@ Plug 'mileszs/ack.vim'
 let g:ackprg = 'ag --vimgrep'
 
 " fzf (fuzzy finder) vim plugin
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+" Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug '/opt/homebrew/opt/fzf'
 Plug 'junegunn/fzf.vim'
 "nnoremap <silent> <C-f> :Files<CR>
 
@@ -153,14 +154,6 @@ Plug 'godlygeek/tabular' | Plug 'tpope/vim-markdown'
 
 " Conquer of Completion
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-let g:coc_node_path = '~/.local/share/fnm/aliases/default/bin/node'
-" Use <cr> to confirm completion
-inoremap <expr> <cr> coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<CR>"
-" GoTo code navigation
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
 
 " Other programming language related plugins
 Plug 'jvirtanen/vim-hcl'
@@ -187,6 +180,8 @@ Plug 'hashivim/vim-terraform'
 
 call plug#end()
 
+" set PATH env. var
+let $PATH = '/Users/lchen5/.local/share/fnm/aliases/default/bin:' . $PATH
 " -----------------------------------------------------------------------------
 " Color settings
 " -----------------------------------------------------------------------------
@@ -207,6 +202,9 @@ syntax on
 set background=light
 colorscheme PaperColor
 
+" set shell
+set shell=/opt/homebrew/bin/fish
+set shellcmdflag=-c
 
 " -----------------------------------------------------------------------------
 " Cursor settings for Vim in WSL terminal
@@ -257,6 +255,17 @@ autocmd FileType go         setlocal noexpandtab tabstop=4 shiftwidth=4 softtabs
 " -----------------------------------------------------------------------------
 " Plugin settings, mappings and autocommands
 " -----------------------------------------------------------------------------
+" Conquer of Completion
+let g:coc_node_path = '/Users/lchen5/.local/share/fnm/aliases/default/bin/node'
+" Use <cr> to confirm completion
+inoremap <expr> <cr> coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<CR>"
+" GoTo code navigation
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+
 " lambdalisue/fern.vim
 " disable some settings and mappings
 let g:fern#disable_default_mappings   = 1
