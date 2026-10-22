@@ -234,7 +234,7 @@ set showcmd         	" show command in bottom bar
 set cursorline      	" highlight current line
 set wildmenu        	" visual autocomplete for command menu
 set showmatch       	" highlight matching [{()}]
-set guifont=JetBrainsMono\ Nerd\ Font:h19   " default font
+set guifont=JetBrains\ Mono:h19   " default font
 set fenc=utf-8              	" set font encoding
 set backspace=indent,eol,start	" backspace key works as typically
 set incsearch   			" show match as search proceeds
@@ -256,10 +256,13 @@ autocmd FileType go         setlocal noexpandtab tabstop=4 shiftwidth=4 softtabs
 " Plugin settings, mappings and autocommands
 " -----------------------------------------------------------------------------
 " Conquer of Completion
-let g:coc_node_path = '/Users/lchen5/.local/share/fnm/aliases/default/bin/node'
+let g:coc_global_extensions = ['coc-tsserver', 'coc-json', 'coc-pyright', 'coc-go']
+let g:coc_node_path = '$HOME/.local/share/fnm/aliases/default/bin/node'
 " Use <cr> to confirm completion
 inoremap <expr> <cr> coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<CR>"
 " GoTo code navigation
+nmap <silent> [c <Plug>(coc-diagnostic-prev)
+nmap <silent> ]c <Plug>(coc-diagnostic-next)
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
