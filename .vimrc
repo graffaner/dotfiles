@@ -203,8 +203,8 @@ set background=light
 colorscheme PaperColor
 
 " set shell
-set shell=/opt/homebrew/bin/fish
-set shellcmdflag=-c
+"set shell=/opt/homebrew/bin/fish
+set shell=/bin/zsh
 
 " -----------------------------------------------------------------------------
 " Cursor settings for Vim in WSL terminal
