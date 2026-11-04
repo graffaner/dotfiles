@@ -138,6 +138,111 @@
     },
     {
       "action": "shell",
+      "resource": "cd *",
+      "effect": "allow"
+    },
+    {
+      "action": "shell",
+      "resource": "cat *",
+      "effect": "allow"
+    },
+    {
+      "action": "shell",
+      "resource": "sed *",
+      "effect": "allow"
+    },
+    {
+      "action": "shell",
+      "resource": "echo *",
+      "effect": "allow"
+    },
+    {
+      "action": "shell",
+      "resource": "sort *",
+      "effect": "allow"
+    },
+    {
+      "action": "shell",
+      "resource": "uniq *",
+      "effect": "allow"
+    },
+    {
+      "action": "shell",
+      "resource": "cut *",
+      "effect": "allow"
+    },
+    {
+      "action": "shell",
+      "resource": "diff *",
+      "effect": "allow"
+    },
+    {
+      "action": "shell",
+      "resource": "jq *",
+      "effect": "allow"
+    },
+    {
+      "action": "shell",
+      "resource": "basename *",
+      "effect": "allow"
+    },
+    {
+      "action": "shell",
+      "resource": "dirname *",
+      "effect": "allow"
+    },
+    {
+      "action": "shell",
+      "resource": "realpath *",
+      "effect": "allow"
+    },
+    {
+      "action": "shell",
+      "resource": "date *",
+      "effect": "allow"
+    },
+    {
+      "action": "shell",
+      "resource": "find *",
+      "effect": "allow"
+    },
+    {
+      "action": "shell",
+      "resource": "find *-delete*",
+      "effect": "ask"
+    },
+    {
+      "action": "shell",
+      "resource": "find *-exec*",
+      "effect": "ask"
+    },
+    {
+      "action": "shell",
+      "resource": "find *-execdir*",
+      "effect": "ask"
+    },
+    {
+      "action": "shell",
+      "resource": "find *-ok*",
+      "effect": "ask"
+    },
+    {
+      "action": "shell",
+      "resource": "sed *-i*",
+      "effect": "ask"
+    },
+    {
+      "action": "shell",
+      "resource": "sed *-?i*",
+      "effect": "ask"
+    },
+    {
+      "action": "shell",
+      "resource": "sed *--in-place*",
+      "effect": "ask"
+    },
+    {
+      "action": "shell",
       "resource": "*.env*",
       "effect": "ask"
     },
@@ -275,6 +380,21 @@
       "action": "shell",
       "resource": "git checkout -- *",
       "effect": "ask"
+    },
+    {
+      "action": "shell",
+      "resource": "npm run test*",
+      "effect": "allow"
+    },
+    {
+      "action": "shell",
+      "resource": "npm run lint*",
+      "effect": "allow"
+    },
+    {
+      "action": "shell",
+      "resource": "npm run typecheck*",
+      "effect": "allow"
     },
     {
       "action": "shell",
@@ -551,6 +671,111 @@
         },
         {
           "action": "shell",
+          "resource": "cd *",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "cat *",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "sed *",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "echo *",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "sort *",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "uniq *",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "cut *",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "diff *",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "jq *",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "basename *",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "dirname *",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "realpath *",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "date *",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "find *",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "find *-delete*",
+          "effect": "ask"
+        },
+        {
+          "action": "shell",
+          "resource": "find *-exec*",
+          "effect": "ask"
+        },
+        {
+          "action": "shell",
+          "resource": "find *-execdir*",
+          "effect": "ask"
+        },
+        {
+          "action": "shell",
+          "resource": "find *-ok*",
+          "effect": "ask"
+        },
+        {
+          "action": "shell",
+          "resource": "sed *-i*",
+          "effect": "ask"
+        },
+        {
+          "action": "shell",
+          "resource": "sed *-?i*",
+          "effect": "ask"
+        },
+        {
+          "action": "shell",
+          "resource": "sed *--in-place*",
+          "effect": "ask"
+        },
+        {
+          "action": "shell",
           "resource": "*.env*",
           "effect": "ask"
         },
@@ -688,6 +913,21 @@
           "action": "shell",
           "resource": "git checkout -- *",
           "effect": "ask"
+        },
+        {
+          "action": "shell",
+          "resource": "npm run test*",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "npm run lint*",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "npm run typecheck*",
+          "effect": "allow"
         },
         {
           "action": "shell",
@@ -847,6 +1087,136 @@
       "action": "tool.use",
       "resource": "edit:*/.config/gcloud/*",
       "effect": "deny"
+    },
+    {
+      "action": "tool.use",
+      "resource": "shell:*.ssh/*",
+      "effect": "deny"
+    },
+    {
+      "action": "tool.use",
+      "resource": "shell:*.aws/*",
+      "effect": "deny"
+    },
+    {
+      "action": "tool.use",
+      "resource": "shell:*.config/gcloud*",
+      "effect": "deny"
+    },
+    {
+      "action": "tool.use",
+      "resource": "shell:*application_default_credentials*",
+      "effect": "deny"
+    },
+    {
+      "action": "tool.use",
+      "resource": "shell:*id_rsa*",
+      "effect": "deny"
+    },
+    {
+      "action": "tool.use",
+      "resource": "shell:*id_ed25519*",
+      "effect": "deny"
+    },
+    {
+      "action": "tool.use",
+      "resource": "shell:*id_ecdsa*",
+      "effect": "deny"
+    },
+    {
+      "action": "tool.use",
+      "resource": "shell:*.pem*",
+      "effect": "deny"
+    },
+    {
+      "action": "tool.use",
+      "resource": "shell:*.p12*",
+      "effect": "deny"
+    },
+    {
+      "action": "tool.use",
+      "resource": "shell:*.netrc*",
+      "effect": "deny"
+    },
+    {
+      "action": "tool.use",
+      "resource": "shell:*.git-credentials*",
+      "effect": "deny"
+    },
+    {
+      "action": "tool.use",
+      "resource": "shell:*.kube/config*",
+      "effect": "deny"
+    },
+    {
+      "action": "tool.use",
+      "resource": "shell:*.docker/config.json*",
+      "effect": "deny"
+    },
+    {
+      "action": "tool.use",
+      "resource": "shell:* .env*",
+      "effect": "deny"
+    },
+    {
+      "action": "tool.use",
+      "resource": "shell:*/.env*",
+      "effect": "deny"
+    },
+    {
+      "action": "tool.use",
+      "resource": "shell:*\".env*",
+      "effect": "deny"
+    },
+    {
+      "action": "tool.use",
+      "resource": "shell:*'.env*",
+      "effect": "deny"
+    },
+    {
+      "action": "tool.use",
+      "resource": "shell:*=.env*",
+      "effect": "deny"
+    },
+    {
+      "action": "tool.use",
+      "resource": "shell:.env*",
+      "effect": "deny"
+    },
+    {
+      "action": "tool.use",
+      "resource": "read:*.env",
+      "effect": "deny"
+    },
+    {
+      "action": "tool.use",
+      "resource": "read:*.env.*",
+      "effect": "deny"
+    },
+    {
+      "action": "tool.use",
+      "resource": "edit:*.env",
+      "effect": "deny"
+    },
+    {
+      "action": "tool.use",
+      "resource": "edit:*.env.*",
+      "effect": "deny"
+    },
+    {
+      "action": "tool.use",
+      "resource": "shell:*.env.example*",
+      "effect": "allow"
+    },
+    {
+      "action": "tool.use",
+      "resource": "read:*.env.example",
+      "effect": "allow"
+    },
+    {
+      "action": "tool.use",
+      "resource": "edit:*.env.example",
+      "effect": "allow"
     }
   ]
 }
